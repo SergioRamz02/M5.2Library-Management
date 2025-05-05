@@ -59,3 +59,9 @@ function actualizarDisponibilidad(titulo, nuevoEstado) {
 mostrarLibros();
 agregarLibro("El principito", "Antoine de Saint-Exupéry", "Fábula", true);
 actualizarDisponibilidad("1984", false);
+
+//Otro ejemplo
+mostrarLibros();
+agregarLibro("Estudio en escarlata", "Sir Arthur Conan Doley", "Novela criminalística", true);
+actualizarDisponibilidad("El principito", false);
+actualizarDisponibilidad("1984", false);
