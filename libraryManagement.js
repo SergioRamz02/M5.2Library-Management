@@ -30,7 +30,12 @@ function agregarLibro(titulo, autor, genero, disponible) {
     const nuevoLibro = { titulo, autor, genero, disponible };
     // Aquí falta la simulación de escribir el libro en el "archivo" (es decir, agregarlo al objeto)
     setTimeout(() => {
-        // Pista: deberías agregar el nuevo libro a `biblioteca.libros`
+        // Agregar el nuevo libro a `biblioteca.libros`
+        biblioteca.libros.push(nuevoLibro);
+        console.log(`Nuevo libro agregado:${titulo}`);
+
+        //Actualizar lista de libros
+        mostrarLibros();
     }, 1000);
 }
 
@@ -38,7 +43,15 @@ function agregarLibro(titulo, autor, genero, disponible) {
 function actualizarDisponibilidad(titulo, nuevoEstado) {
     // Simula un retraso antes de actualizar la disponibilidad
     setTimeout(() => {
-        // Pista: busca el libro por título y cambia la propiedad 'disponible' a nuevoEstado
+        
+        // Buscar el libro por título y cambiar la propiedad 'disponible' a nuevoEstado
+        const nuevoLibro = biblioteca.libros.find(libro => libro.titulo === titulo);
+        if(nuevoLibro !== undefined && nuevoLibro !== null){
+            nuevoLibro.disponible === nuevoEstado;
+            console.log(`Disponibilidad actualizada: "${titulo}" está ahora ${nuevoEstado ? 'disponible' : 'prestado'}`)
+        }else{
+            console.log(`Libro no encontrado: "${titulo}"`);
+        }
     }, 1000);
 }
 
